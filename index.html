@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="./css/validator.css">
+</head>
+
+<body>
+    <div class="screen">
+        <div class="leftside">
+            <img src="./images/undraw_authentication_fsn5.svg" alt="imagem autenticação">
+        </div>
+        <div class="rightside">
+            <h1>Crie uma conta</h1>
+            <form action="cadastro.js" method="post" class="tag-validator">
+                <label for="nome">Nome <br>
+                    <input type="text" name="name" data-rules="required">
+                </label>
+                <label for="e-mail">e-mail <br>
+                    <input type="email" name="e-mail">
+                </label>
+                <label for="senha">Senha <br>
+                    <input type="password" name="e-mail">
+                </label>
+                <label for="">
+                    <input type="submit" value="cadastrar">
+                </label>
+            </form>
+            <div>
+                Já tem uma conta? <a href=""> Faça o login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/validator.js"></script>
+</body>
+
+</html>
