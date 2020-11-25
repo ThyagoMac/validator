@@ -52,6 +52,14 @@ let tag_validator = {
               }
             }
             break;
+          case "number":
+            if (input.value != "") {
+                let regex = /^[0-9]+$/;
+                if (!regex.test(input.value.toLowerCase())) {
+                  return "Campo " + input.parentNode.innerText + " aceita apenas números";
+                }
+              }
+            break;
         }
       }
     }
