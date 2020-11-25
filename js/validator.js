@@ -5,6 +5,8 @@ let tag_validator = {
 
         let inputs = form.querySelectorAll(".tag-validator input")
 
+        tag_validator.clearErrors();
+
         /* for (let i = 0; i < inputs.length; i++) {
             let input = inputs[i];
         } */
@@ -44,13 +46,28 @@ let tag_validator = {
         return true;
     },
     showError: (input, error) => {
-        input.style.borderColor = '#FF0000';
+        input.style.borderColor = 'rgb(255, 142, 142)';
 
-        let errorSpan = document.createElement('span');
-        errorSpan.classList.add('tag-error');
-        errorElement.innerHTML = error;
-
+        let inputId = input.id;
+        let errorSpan = document.createElement('label');
         
+        if (inputId) {
+            errorSpan.setAttribute("for", inputId);    
+        }
+        errorSpan.classList.add('tag-error');
+        errorSpan.innerHTML = error;
+
+        input.parentElement.insertBefore(errorSpan, input.ElementSibling);
+    },
+    clearErrors: () => {
+        let inputs = form.querySelectorAll('input');
+        inputs.forEach(element => {
+            element.style.borderColor = '';
+        });
+
+        let errorElements = document.querySelectorAll('.tag-error')
+
+        errorElements.forEach((element) => { element.remove() });
     }
 }
 
