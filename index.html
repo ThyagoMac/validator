@@ -17,13 +17,13 @@
             <h1>Crie uma conta</h1>
             <form action="cadastro.js" method="post" class="tag-validator">
                 <label for="nome">Nome <br>
-                    <input id="nome" type="text" name="name" data-rules="required">
+                    <input id="nome" type="text" name="name" data-rules="required|min:2">
                 </label>
                 <label for="e-mail">e-mail <br>
-                    <input id="e-mail" type="email" name="e-mail" data-rules="required">
+                    <input id="e-mail" type="text" name="e-mail" data-rules="required|email">
                 </label>
                 <label for="senha">Senha <br>
-                    <input id="senha" type="password" name="e-mail" data-rules="required">
+                    <input id="senha" type="password" name="e-mail" data-rules="required|min:3|max:6">
                 </label>
                 <label for="">
                     <input type="submit" value="cadastrar">
